@@ -22,5 +22,15 @@ def mask_user_account(name_account: str, user_account: str) -> str:
         return "Введен короткий или длинный номер счета"
 
 
+def foo(test):
+    """
+    Функция принимает на вход дату и время
+    :param test: принимает дату и время
+    :return: Дату в формате ДД.ММ.ГГ
+    """
+    return f"{test[8:10]}.{test[5:7]}.{test[0:4]}"
+
+
 print(mask_user_card("Maestro", "1234567890123456"))
 print(mask_user_account("Счет", "12345678901234567890"))
+print(foo("2018-07-11T02:26:18.671407"))
