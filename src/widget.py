@@ -6,7 +6,7 @@ check_name_account = ["Maestro", "MasterCard", "Visa Classic", "Visa Platinum", 
 def chek_card_and_account(info: str) -> str:
     """
     Функция принимает на вход номер карты/счета и название карты/счета и проверяет их
-    :param name_card: Номер для маскирования карты/счета и название карты/счета
+    :param info : Номер для маскирования карты/счета и название карты/счета
     :return: название карты/счета и маску карты/счета
     """
     list_of_info = info.split()
@@ -17,7 +17,7 @@ def chek_card_and_account(info: str) -> str:
     elif len(list_of_info[-1]) == 16 and join_mask in check_name_account:
         return f"{join_mask} {mask_user_card(list_of_info[-1])}"
     else:
-        return f"Не верно введен номер карты/счета или название карты/счета"
+        return "Не верно введен номер карты/счета или название карты/счета"
 
 
 def date_and_time(date: str) -> str:
