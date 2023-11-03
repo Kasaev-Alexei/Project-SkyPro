@@ -29,6 +29,6 @@ def date_and_time(date: str) -> str:
     return f"{date[8:10]}.{date[5:7]}.{date[0:4]}"
 
 
-print(chek_card_and_account("Visa Platinum 1234567890123456"))
-print(chek_card_and_account("Счет 12345678901234567890"))
-print(date_and_time("2018-07-11T02:26:18.671407"))
+# print(chek_card_and_account("Visa Platinum 1234567890123456"))
+# print(chek_card_and_account("Счет 12345678901234567890"))
+# print(date_and_time("2018-07-11T02:26:18.671407"))
