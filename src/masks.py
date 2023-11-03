@@ -5,7 +5,7 @@ def mask_user_card(user_card: str) -> str:
     :return: Маскированный по правилу номер
     """
     if len(user_card) == 16:
-        return f"{user_card[0:4]} {user_card[5:7]}** **** {user_card[-4:]}"
+        return f"{user_card[0:4]} {user_card[4:6]}** **** {user_card[-4:]}"
     else:
         return "Введен короткий или длинный номер карты"
 

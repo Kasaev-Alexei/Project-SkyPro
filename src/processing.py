@@ -4,7 +4,7 @@ from typing import Dict, List, Optional
 from src.data_file import data_list, date
 
 
-def get_sorted_data(data: List[Dict[str, str]], state: Optional[str] = None) -> List[Dict[str, str]]:
+def get_sorted_data(data: List[Dict[str, str]], state: Optional[str] = "EXECUTED") -> List[Dict[str, str]]:
     """
     Функция принимает на вход список словарей и значение для ключа state
     :param data: Список словарей
