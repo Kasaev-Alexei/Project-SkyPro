@@ -56,20 +56,24 @@ def transaction() -> list[dict]:
 
 def test_filter_by_currency(transaction: list[dict]) -> None:
     usd_transactions = filter_by_currency(transaction, "USD")
+    result = []
     for _ in range(2):
-        print(next(usd_transactions)["id"])
+        result.append(next(usd_transactions)["id"])
+    assert result == [939719570, 142264268]
 
 
 def test_transaction_descriptions(transaction: list[dict]) -> None:
     descriptions = transaction_descriptions(transaction)
+    result_transaction = []
     for _ in range(5):
-        print(next(descriptions))
+        result_transaction.append(next(descriptions))
+    assert result_transaction == ["Перевод организации", "Перевод со счета на счет", "Перевод со счета на счет",
+                                  "Перевод с карты на карту", "Перевод организации"]
 
 
+#
 def test_card_number_generator() -> None:
-    for card_number in card_number_generator(1, 5):
-        print(card_number)
-    for card_number in card_number_generator(10, 15):
-        print(card_number)
-    for card_number in card_number_generator(100, 105):
-        print(card_number)
+    result_card_number = []
+    for card_number in card_number_generator(5555, 5557):
+        result_card_number.append(card_number)
+    assert result_card_number == ["0000 0000 0000 5555", "0000 0000 0000 5556", "0000 0000 0000 5557"]
