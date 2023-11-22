@@ -34,7 +34,3 @@ def mask_user_account(user_account: str) -> str:
     else:
         logger.error('Введен короткий или длинный номер счета')
         return "Введен короткий или длинный номер счета"
-
-
-mask_user_card("123456789012345")
-mask_user_account("12345678901234567890")
