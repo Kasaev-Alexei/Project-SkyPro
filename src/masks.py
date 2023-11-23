@@ -1,11 +1,4 @@
-import logging
-
-logger = logging.getLogger('__masks__')
-file_handler_masks = logging.FileHandler('masks_loger.log', 'w', encoding='utf-8')
-file_formatter_masks = logging.Formatter('%(asctime)s %(module)s %(levelname)s %(message)s')
-file_handler_masks.setFormatter(file_formatter_masks)
-logger.addHandler(file_handler_masks)
-logger.setLevel(logging.INFO)
+from src.log import logger
 
 
 def mask_user_card(user_card: str) -> str:
