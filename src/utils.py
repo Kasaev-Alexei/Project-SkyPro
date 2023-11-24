@@ -1,14 +1,6 @@
 import json
 from typing import Any
-import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-file_handler = logging.FileHandler("utils.log", encoding="utf-8")
-file_handler.setLevel(logging.DEBUG)
-file_handler.setFormatter(formatter)
-logger.addHandler(file_handler)
+from src.log import logger
 
 
 def get_read_json(the_path_to_the_file: str) -> Any:

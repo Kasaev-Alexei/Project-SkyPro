@@ -1,9 +1,9 @@
 from functools import wraps
-from typing import Callable, Any
+from typing import Callable, Any, Optional
 import datetime
 
 
-def log(filename=None) -> Any:
+def log(filename: Optional[str] = None) -> Callable:
     """
     Декоратор log
     принимает один необязательный аргумент filename, определяет имя файла, в который будут записываться логи. Если
@@ -12,9 +12,9 @@ def log(filename=None) -> Any:
     :param filename: filename = None
     """
 
-    def wrapped(function: Callable) -> Any:
+    def wrapped(function: Callable) -> Callable:
         @wraps(function)
-        def inner(*args, **kwargs) -> Any:
+        def inner(*args: Any, **kwargs: Any) -> Any:
             try:
                 result = function(*args, **kwargs)
                 message = f"{datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')}, {function.__name__} ok\n"
